@@ -6,3 +6,28 @@ https://youtu.be/hdI2bqOjy3c?t=4228
 
 Start at 1:10:29
  */
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userlist = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSUmbit);
+
+function onSubmit(e){
+    e.preventDefault();
+
+    if(nameInput.value ==='' || emailInput.value ===''){
+        msg.classList.add('error');
+        msg.innerHTML = 'Please enter all fields';
+
+        setTimeout(() => msg.removal(), 3000);
+    } else {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(
+            '${nameInput.value} : ${email.Input.value} '))
+        
+        userlist.appendChild(li);
+    }
+
+    }
